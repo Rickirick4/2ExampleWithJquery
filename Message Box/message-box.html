@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Message Box</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #message-box {
+            background-color: green;
+            text-align: center;
+            color: white;
+        }
+
+        #header {
+            height: 25px;
+            padding: 10px;
+            border-bottom: 2px solid white;
+            cursor: pointer;
+        }
+
+
+        #content {
+            height: 150px;
+            padding: 40px 0;
+            display: none;
+        }
+        
+        #ico{
+            float: right;
+            margin-right: 20px;
+            transition: all .3s;
+        }
+        
+        #ico:hover{
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div id="message-box">
+
+        <div id="header">
+            Got a message
+            <span id="ico">X</span>
+        </div>
+
+        <div id="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, minus ipsum adipisci.</p>
+        </div>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function() {
+
+            $("#header").click(function() {
+                $("#content").toggle("slow");
+            });
+
+
+            $("#ico").click(function() {
+                $("#message-box").hide("slow");
+            });
+
+        });
+    </script>
+
+</body></html>
